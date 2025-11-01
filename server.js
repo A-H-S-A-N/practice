@@ -29,8 +29,13 @@ app.use("/api/v1/comment", commentRouter)
 app.use("/api/v1/post", postRouter)
 app.use("/api/v1/user", userRouter)
 app.use("/api/v1/message", messageRouter)
-app.listen(process.env.PORT, async()=>{
-    await connectDB()
-    console.log(`Server is running at port ${process.env.PORT}`)
-}
-)
+const PORT = process.env.PORT || 8000;
+
+app.listen(PORT, async () => {
+  try {
+    await connectDB();
+    console.log(`✅ Server running on port ${PORT}`);
+  } catch (error) {
+    console.error("❌ Database connection failed:", error);
+  }
+});
