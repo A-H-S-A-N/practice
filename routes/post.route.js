@@ -7,6 +7,6 @@ const postRouter= express.Router()
 postRouter.post("/create",auth, PostClassObj.create);
 postRouter.delete("/:id/delete", auth, PostClassObj.delete);
 postRouter.get("/:id/like", auth, PostClassObj.like)
-postRouter.get("/", auth, PostClassObj.findAllPosts)
-postRouter.get("/:id", auth, PostClassObj.selectedUserPost)
+postRouter.get("/", PostClassObj.findAllPosts)
+postRouter.get("/:id", PostClassObj.selectedUserPost)
 module.exports={ postRouter}
