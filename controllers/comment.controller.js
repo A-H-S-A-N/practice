@@ -1,4 +1,4 @@
-const { Comments } = require("../models/Comment.model");
+const { Comments } = require("../models/comment.model");
 const { post } = require("../models/post.model");
 
 class CommentClass{
