@@ -1,7 +1,7 @@
-const { Comments } = require("../models/comment.model");
 const { post } = require("../models/post.model");
-
+const { Comments } = require("../models/comment.model");
 class CommentClass{
+
     create=async(req, res)=>{
         try {
             const loginId=req.user._id;
